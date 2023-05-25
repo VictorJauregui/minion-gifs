@@ -62,7 +62,7 @@ const LoveHome = () => {
               },
           }}
         ></Swiper>
-        <div className='w-4/6 mx-auto' >
+        <div className='w-[90%] lg:w-4/6 mx-auto' >
             <LoveGifs />
         </div>
     </div>

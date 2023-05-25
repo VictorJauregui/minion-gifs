@@ -31,7 +31,7 @@ const CardGif = ({ gif }) => {
 
   return (
     <div
-      className="min-w-[16rem] max-w-[16rem] h-60 relative cursor-pointer"
+      className="min-w-[12rem] md:min-w-[16rem] md:max-w-[16rem] h-52 md:h-60 relative cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

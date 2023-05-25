@@ -14,19 +14,19 @@ const HomePage = () => {
     const [modalShow, setModalShow] = useState(false)
   return (
     <div className='bg-black'>
-        <div className='w-[80%] mx-auto h-[30vh] bg-black border-b'>
+        <div className='w-[95%] lg:w-[80%] mx-auto h-[38vh] 2xl:h-[30vh] bg-black border-b'>
             <Menu />
             <div className='mt-16'>
-                <h2 className='text-white w-5/6 mx-auto text-5xl font-bold  mb-0'>Welcome Víctor,</h2>
-                <h2 className='text-white w-5/6 mx-auto text-5xl font-bold  mt-0'>Here you can find <span className='text-BlueMain'>Millions</span> of <span className='text-yellow-300 font-extrabold'>minions</span> in action</h2>
+                <h2 className='text-white w-5/6 mx-auto text-xl md:text-2xl xl:text-5xl font-bold  mb-0'>Welcome Víctor,</h2>
+                <h2 className='text-white w-5/6 mx-auto text-xl md:text-2xl xl:text-5xl font-bold  mt-0'>Here you can find <span className='text-BlueMain'>Millions</span> of <span className='text-yellow-300 font-extrabold'>minions</span> in action</h2>
             </div>
             <Search />
         </div>
         <div className='bg-black'>
-            <div className=' bg-black pt-10 w-4/6 mx-auto flex justify-end '>
+            <div className=' bg-black pt-10 w-[95%] lg:w-[80%] mx-auto flex justify-end '>
                 <div className='flex px-6 bg-BlueMain py-1 rounded items-center gap-5 cursor-pointer' onClick={()=>setModalShow(true)}>
                     <img className='w-5 h-5' src={plus} alt="" />
-                    <p className='text-white font-bold text-xl' >New minion</p>
+                    <p className='text-white font-bold text-xl hidden md:flex' >New minion</p>
                 </div>
                 
             </div>
@@ -37,7 +37,7 @@ const HomePage = () => {
             <LoveHome />
             <PartyHome />
         </div>
-        <div className='w-[80%] mx-auto'>
+        <div className='w-[95%] md:w-[80%] mx-auto'>
             <Footer />
 
         </div>

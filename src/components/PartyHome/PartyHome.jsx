@@ -64,7 +64,7 @@ const PartyHome = () => {
               },
           }}
         ></Swiper>
-        <div className='w-4/6 mx-auto' >
+        <div className='w-[90%] lg:w-4/6 mx-auto' >
             <PartyGifs />
         </div>
     </div>

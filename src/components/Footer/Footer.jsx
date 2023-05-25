@@ -7,21 +7,22 @@ const Footer = () => {
   return (
     <div className='border-t-2'>
         <div className='flex justify-center w-full'>
-            <img className='w-60 my-16' src={logo} alt="" />
+            <img className='w-60 my-10 lg:my-16' src={logo} alt="" />
         </div>
-        <div className='flex justify-between mx-40 pb-20'>
-            <div className='text-white'>
-                <p className='font-bold text-xl mb-4'>Gifs types</p>
+        <div className='flex sm:flex justify-between 2xl:mx-40 mx-6 pb-20'>
+            <div className='md:block text-white hidden sm:block'>
+                <p className='font-bold text-xl mb-4 '>Gifs types</p>
                 <p>Smiling</p>
                 <p>Love</p>
                 <p>Party</p>
             </div>
-            <div className='text-white'>
+            <div className='text-white mt-10 sm:mt-0'>
                 <p className='font-bold text-xl mb-4'>Terms</p>
                 <p>Cookies</p>
                 <p>Terms and conditions</p>
             </div>
-            <div className='text-white'>
+
+            <div className='text-white mt-10 sm:mt-0'>
                 <p className='font-bold text-xl mb-4'>Contact</p>
                 <p>minionsgifs@minionsgifs.com</p>
                 <p>+34 6757865489</p>

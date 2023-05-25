@@ -26,7 +26,7 @@ const SmilingPage = () => {
             <Search />
             <div className='mb-20'>
                 <h2 className='text-white font-bold text-4xl mt-10 mb-8'>Smiling <span className=''>Minions</span> </h2>
-                <div className='grid grid-cols-5 gap-7 w-full' >
+                <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-7 w-full' >
                 {
                     smilingGifs.map((gif) => {
                         return (

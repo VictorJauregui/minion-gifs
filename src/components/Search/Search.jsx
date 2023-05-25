@@ -25,13 +25,13 @@ const Search = () => {
       <input
         ref={inputRef}
         type="text"
-        className="py-2 px-4 rounded-xl focus:outline-none w-[90%]"
+        className="py-2 px-4 rounded-xl focus:outline-none w-[80%] lg:w-[90%]"
         placeholder="Search a Gifs"
         onChange={handleSearch}
       />
       <button
         onClick={handleReset}
-        className="bg-transparent border-2 border-BlueMain w-[10%] py-2 px-4 rounded-xl text-white ml-2 hover:bg-BlueMain"
+        className="bg-transparent border-2 border-BlueMain w-[20%] lg:w-[10%] py-2 px-4 rounded-xl text-white ml-2 hover:bg-BlueMain"
       >
         Reset
       </button>
