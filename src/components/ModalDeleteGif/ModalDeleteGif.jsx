@@ -1,11 +1,29 @@
-
+import { useContext, Redirect, useState } from 'react'
 import sadMinion from '../../assets/sadMinion.png'
+import GiftContext from '../../context/GiftsContext'
+import { toast } from 'react-hot-toast'
 
-const ModalDeleteGif = ({setShowDeleteModal}) => {
+const ModalDeleteGif = ({ setShowDeleteModal, infoGif }) => {
+  const { deleteGif } = useContext(GiftContext)
+  const [redirect, setRedirect] = useState(false)
 
-    const handleCloseModal = () => {
-        setShowDeleteModal(false)
-    }
+  const handleCloseModal = () => {
+    setShowDeleteModal(false)
+  }
+
+  const handleSubmit = () => {
+    deleteGif(infoGif._id)
+      .then(() => {
+        toast.success("Your minion has been deleted successfully")
+        setRedirect(true)
+      })
+      .catch((error) => {
+        toast.error("Failed to delete the minion")
+        console.error(error)
+      })
+
+  }
+
 
     return (
       <div>
@@ -21,8 +39,11 @@ const ModalDeleteGif = ({setShowDeleteModal}) => {
                   </div>
                   <div className="flex justify-center w-full mt-8 mb-8">
                     <button className="border border-white/50 text-white/50 px-4 py-1 rounded mr-4 hover:text-white hover:border hover:border-white" onClick={()=>handleCloseModal()} >Cancelar</button>
-                    <button className="bg-[#63BEF1] border border-white text-white px-4 py-1 rounded hover:bg-red-500">Delete GIF</button>
+                    <button className=" border border-white text-white px-4 py-1 rounded bg-red-500" onClick={handleSubmit}>Delete GIF</button>
                   </div>
+                  {
+                    redirect && <Redirect to="/" />
+                  }
                   
               </div>
             </div>

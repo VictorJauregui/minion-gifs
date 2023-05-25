@@ -2,6 +2,7 @@
 import { useContext } from 'react'
 import CardGif from '../SmilingHome/CardGif'
 import GiftContext from '../../context/GiftsContext'
+import { NavLink } from 'react-router-dom'
 
 
 const SmilingGifts = () => {
@@ -18,7 +19,9 @@ const SmilingGifts = () => {
       <div className='flex gap-3 overflow-x-scroll scrollbar-hide max-w-[100%] '>
         { 
           SmilingGifs.map((gif) => (
-            <CardGif key={gif.id} gif={gif} />
+            <NavLink to={`./gif/${gif._id}`}>
+              <CardGif key={gif.id} gif={gif} />
+            </NavLink>
           ))
           
         }

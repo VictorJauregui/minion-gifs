@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className='border-t-2'>
         <div className='flex justify-center w-full'>
-            <img className='my-16' src={logo} alt="" />
+            <img className='w-60 my-16' src={logo} alt="" />
         </div>
         <div className='flex justify-between mx-40 pb-20'>
             <div className='text-white'>

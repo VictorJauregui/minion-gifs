@@ -6,17 +6,17 @@ import GifContext from "./GiftsContext"
 const GiftsProvider = ({ children }) => {
 
   const [dataGifs, setDataGifs] = useState([])
+  const [updateNewGif, setUpdateNewGif] = useState()
 
   useEffect(() => {
-    const musicTracks = async () => {
+    const gifs = async () => {
       const res = await fetch("http://localhost:4000/gifs");
       const data = await res.json();
       setDataGifs(data.allGifs);
 
     };
-    musicTracks();
-  }, [setDataGifs]);
-  console.log(dataGifs)
+    gifs();
+  }, [setDataGifs, updateNewGif]);
 
 
   const addGif = async (gif) => {
@@ -37,15 +37,33 @@ const GiftsProvider = ({ children }) => {
     // }
   }
 
+  const updateGif = async (gifId, newValue) => {
+    
+    const res = await fetch("http://localhost:4000/gifs/update-gif", {
+        method: "PATCH", 
+        headers: {
+        "Content-Type": "application/json",
+      },
+        body: JSON.stringify({gifId, newValue})
+    })
+    const data = await res.json()
+    console.log(data)
+    setUpdateNewGif(data.gifChanged)
+}
 
-
-
+const deleteGif = async (id) => {
+  await fetch(`http://localhost:4000/gifs/delete-gif/${id}`,{
+      method: "DELETE",
+    })
+}
 
 
   return (
     <GifContext.Provider value={{
       addGif,
       dataGifs,
+      updateGif,
+      deleteGif
     }}>
       {children}
     </GifContext.Provider>

@@ -12,7 +12,8 @@ const ModalNewGif = ({setModalShow}) => {
     const [gifData, setGifData] = useState({
         nameGif: "",
         imageGif:"",
-        typeGif:"Smiling"
+        typeGif:"Smiling",
+        liked: false
     })
 
     // const handlePreviewImg = (e) => {
@@ -72,7 +73,7 @@ const ModalNewGif = ({setModalShow}) => {
                 <div className="flex w-[95%] mb-10 gap-8">
                     <div className="w-1/3">
                         <p className="text-2xl font-bold text-white mt-4 mb-2">Name your minion<span className="text-xl text-red-600">*</span></p>
-                        <input className="border-b border-white/50 focus:border-blue-500 outline-none bg-transparent w-full" 
+                        <input className="border-b border-white/50 focus:border-blue-500 outline-none bg-transparent w-full text-white" 
                         type="text"
                         name="nameGif"
                         onChange={handleChangeForm}
@@ -87,7 +88,7 @@ const ModalNewGif = ({setModalShow}) => {
                                 >
                                     <option value="Smiling">Smiling</option>
                                     <option value="Love">Love</option>
-                                    <option value="Crazy">Crazy</option>
+                                    <option value="Party">Party</option>
                                 </select>
                     </div>
                     <div className="flex justify-end w-1/3 items-end">

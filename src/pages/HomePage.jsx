@@ -7,6 +7,8 @@ import plus from '../assets/plusWhite.png'
 import ModalNewGif from '../components/ModalNewGif/ModalNewGif'
 import { useState } from 'react'
 import Footer from '../components/Footer/Footer'
+import PartyHome from '../components/PartyHome/PartyHome'
+import ModalCopyUrl from '../components/ModalCopyUrl/ModalCopyUrl'
 
 const HomePage = () => {
     const [modalShow, setModalShow] = useState(false)
@@ -33,6 +35,7 @@ const HomePage = () => {
         <div className='bg-black min-h-screen text-white'>
             <SmilingHome />
             <LoveHome />
+            <PartyHome />
         </div>
         <div className='w-[80%] mx-auto'>
             <Footer />
@@ -42,6 +45,7 @@ const HomePage = () => {
             modalShow &&
             <ModalNewGif setModalShow={setModalShow}/> 
         }
+        
     </div>
   )
 }

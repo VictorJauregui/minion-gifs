@@ -3,11 +3,13 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 import RoutesPath from './routes/RoutesPath'
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
   return (
     <>
+    <Toaster />
     <RoutesPath />
     </>
   )

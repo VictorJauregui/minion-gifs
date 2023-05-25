@@ -1,11 +1,18 @@
 
 import copyMinion from '../../assets/copyMinion.png'
 import close from '../../assets/close.png'
+import { toast } from 'react-hot-toast'
 
-const ModalCopyUrl = ({setShowCopyModal}) => {
+const ModalCopyUrl = ({setShowCopyModal, infoGif}) => {
 
     const handleCloseModal = () => {
         setShowCopyModal(false)
+    }
+
+    const handleCopyText = () => {
+      navigator.clipboard.writeText(`http://127.0.0.1:5173/gif/${infoGif._id}`);
+      setShowCopyModal(false)
+      toast.success("The minion is in your power. SHARE IT")
     }
 
     return (
@@ -24,8 +31,8 @@ const ModalCopyUrl = ({setShowCopyModal}) => {
                   </div>
                   <p className='w-[95%] mx-auto text-4xl font-bold text-white mt-10'> Copy Url</p>
                   <div className='w-[95%] mb-10 gap-4'>
-                    <input className="w-[82%] mt-4 mx-auto h-[2rem] mr-5" type="text" />
-                    <button className="bg-[#63BEF1] border border-white text-white py-1 w-[15%] rounded">Copy</button>
+                    <input className="w-[82%] mt-4 mx-auto h-[2rem] mr-5 text-[#00A3FF]" type="text" value={`http://127.0.0.1:5173/gif/${infoGif._id}`} />
+                    <button className="bg-[#63BEF1] border border-white text-white py-1 w-[15%] rounded" onClick={handleCopyText}>Copy</button>
                   </div>
               </div>
             </div>
