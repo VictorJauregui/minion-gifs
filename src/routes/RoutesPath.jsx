@@ -1,5 +1,5 @@
 import GiftsProvider from "../context/GiftsProvider"
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import HomePage from "../pages/HomePage"
 import GifPage from "../pages/GifPage"
 import SmilingPage from "../pages/SmilingPage"
@@ -12,6 +12,7 @@ const RoutesPath = () => {
     <GiftsProvider>
         <BrowserRouter>
             <Routes>
+            <Route path='*' element={<Navigate to={'/'}/>} />
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/gif/:id" element={<GifPage />}/>
                 <Route path="/smiling" element={<SmilingPage />}/>

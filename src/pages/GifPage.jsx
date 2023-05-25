@@ -18,11 +18,11 @@ import { NavLink, useParams } from 'react-router-dom'
 
 const GifPage = () => {
   const {id} = useParams()
-  const {dataGifs, updateGif} = useContext(GiftContext)
+  const {dataGifs, updateGif, infoGif, setInfoGif} = useContext(GiftContext)
   const [showEditModal, setEditShowModal] = useState(false)
   const [showCopyModal, setShowCopyModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [infoGif, setInfoGif] = useState(null);
+
 
 
   

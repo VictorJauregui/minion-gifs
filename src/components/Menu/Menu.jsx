@@ -20,8 +20,8 @@ const Menu = () => {
             </div>
             <div className='flex justify-end w-full mr-20 items-center '>
                 <div className='flex gap-4 items-center px-4 py-1 rounded bg-black'>
-                    <img className='w-10 h-10 rounded-full border-2 border-BlueMain' src={user} alt="" />
-                    <p className='text-white font-bold'>Víctor Jauregui</p>
+                    <img className='w-14 h-14 rounded-full border-2 border-BlueMain' src={user} alt="" />
+                    <p className='text-white font-bold'>Dominion</p>
                 </div>
 
             </div>
