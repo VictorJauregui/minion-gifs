@@ -5,10 +5,11 @@ import GiftContext from '../context/GiftsContext'
 
 import GifsIndividualPage from '../components/GifsIndividualPage/GifsIndividualPage'
 import Footer from '../components/Footer/Footer'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const LovePage = () => {
     const {dataGifs} = useContext(GiftContext)
+    const navigate = useNavigate();
 
     const LoveGifs = dataGifs.filter((love) => {
         return love.typeGif === "Love"
@@ -26,9 +27,9 @@ const LovePage = () => {
                 {
                     LoveGifs.map((gif) => {
                         return (
-                            <NavLink to={`/gif/${gif._id}`}>
+                            <div onClick={() => navigate(`/gif/${gif._id}`)}>
                                 <GifsIndividualPage gif={gif} />
-                            </NavLink>
+                            </div>
                         )                          
                     })
                 }

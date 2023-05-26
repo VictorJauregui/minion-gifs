@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import like from '../../assets/like.png'
 import share from '../../assets/share.png'
 import blueHeart from '../../assets/blueHeart.png'
 import partyCard from '../../assets/partyCard.png'
 import LoveCard from '../../assets/LoveCard.png'
 import smileCard from '../../assets/smileCard.png'
+import GiftContext from '../../context/GiftsContext'
 
 const GifsIndividualPage = ({gif}) => {
     const [isHovered, setIsHovered] = useState(false)
+    const { dataGifs, setDataGifs, updateGif } = useContext(GiftContext);
 
     const handleMouseEnter = () => {
         setIsHovered(true)
@@ -15,6 +17,20 @@ const GifsIndividualPage = ({gif}) => {
 
     const handleMouseLeave = () => {
         setIsHovered(false)
+    }
+
+    const handleLike = (e) => {
+        e.stopPropagation();
+        const updatedGifs = dataGifs.map((minion) => {
+            if (gif._id === minion._id) {
+              return { ...gif, liked: !gif.liked };
+            } else {
+              return minion;
+            }
+          });
+          const currentGif = { ...gif, liked: !gif.liked };
+          updateGif(gif._id, currentGif);
+          setDataGifs([...updatedGifs]);
     }
     
   return (
@@ -27,7 +43,7 @@ const GifsIndividualPage = ({gif}) => {
                                         <div className="absolute inset-0 flex flex-col justify-center items-center gap-y-5">
                                             <p className="font-bold text-lg opacity-90 text-white">{gif.nameGif}</p>
                                             <div className="flex items-end justify-center gap-5">
-                                                <img className="w-10 opacity-90" src={gif.liked ? blueHeart : like} alt="" />
+                                                <img className="w-10 opacity-90" src={gif.liked ? blueHeart : like} onClick={handleLike} alt="" />
                                                 <img className="w-10 opacity-90" src={share} alt="" />
                                             </div>
                                         </div>   

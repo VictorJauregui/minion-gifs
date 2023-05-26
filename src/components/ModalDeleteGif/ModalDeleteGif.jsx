@@ -30,7 +30,7 @@ const ModalDeleteGif = ({ setShowDeleteModal, infoGif }) => {
       <div className="fixed inset-0 overflow-y-auto bg-black/70 z-30">
         <div className="flex items-center justify-center min-h-screen ">
           <img
-            className=" w-40 ml-[500px] mb-[300px] absolute"
+            className="hidden xl:flex xl:w-32 ml-[450px] mb-[250px] absolute"
             src={sadMinion}
             alt=""
           />
@@ -40,8 +40,8 @@ const ModalDeleteGif = ({ setShowDeleteModal, infoGif }) => {
                 Delete <span className="text-6xl">Minion</span>
               </h2>
             </div>
-            <div className="flex justify-center w-full ">
-              <p className="text-2xl font-bold text-white mt-5">
+            <div className="flex justify-center  mx-auto w-[90%] ">
+              <p className="text-2xl text-center 2xl:font-bold text-white mt-5">
                 Oooohh...! Are you sure that you want to delete this precious
                 minion?
               </p>

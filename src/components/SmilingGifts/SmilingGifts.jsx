@@ -14,7 +14,7 @@ const SmilingGifts = () => {
   return (
     <div className="">
       <p className="text-4xl font-bold pt-10 mb-6 flex">Smiling</p>
-      <div className="flex gap-3 overflow-x-scroll scrollbar-hide max-w-[100%] ">
+      <div className="gif-container flex gap-3 overflow-x-scroll scrollbar-x-hide max-w-[100%] ">
         {SmilingGifs.map((gif) => (
           <div onClick={() => navigate(`./gif/${gif._id}`)}>
             <CardGif key={gif.id} gif={gif} />

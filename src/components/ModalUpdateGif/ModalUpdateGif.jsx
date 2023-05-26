@@ -35,7 +35,7 @@ const ModalUpdateGif = ({ setEditShowModal, infoGif }) => {
       <div className="fixed inset-0 overflow-y-auto bg-black/70 z-30">
         <div className="flex items-center justify-center min-h-screen ">
           <img
-            className=" w-60 ml-[500px] mb-[600px] absolute"
+            className="hidden xl:flex xl:w-40 xl:mb-[520px] 2xl:w-48 ml-[450px] mb-[550px] absolute"
             src={minionEdit}
             alt=""
           />
@@ -46,9 +46,9 @@ const ModalUpdateGif = ({ setEditShowModal, infoGif }) => {
               </h2>
             </div>
             <div className="w-full flex">
-              <div className="w-[70%] relative flex justify-center items-center ">
+              <div className="w-[70%] relative flex lg:justify-center lg:items-center ">
                 <img
-                  className="w-full h-[40vh] rounded-xl p-5 absolute"
+                  className="w-full h-[20vh] sm:h-[25vh] md:h-[25vh] lg:h-[40vh] rounded-xl p-5 absolute"
                   src={infoGif.imageGif}
                   alt=""
                 />
@@ -76,7 +76,7 @@ const ModalUpdateGif = ({ setEditShowModal, infoGif }) => {
                     <option value="Party">Party</option>
                   </select>
                 </div>
-                <div className="flex justify-end items-end w-full mt-60">
+                <div className="flex justify-end items-end w-full mt-6 sm:mt-16 lg:mt-60">
                   <button
                     className="border border-white/50 text-white/50 px-4 py-1 rounded mr-4"
                     onClick={() => handleCloseModal()}
@@ -87,7 +87,7 @@ const ModalUpdateGif = ({ setEditShowModal, infoGif }) => {
                     className="bg-[#63BEF1] border border-white text-white px-4 py-1 rounded"
                     onClick={handleOnSubmit}
                   >
-                    Update GIF
+                    Update
                   </button>
                 </div>
               </div>

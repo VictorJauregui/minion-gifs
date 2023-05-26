@@ -10,6 +10,7 @@ import smileCard from "../../assets/smileCard.png";
 import GiftContext from "../../context/GiftsContext";
 
 const CardGif = ({ gif }) => {
+  const { dataGifs, setDataGifs, updateGif } = useContext(GiftContext);
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -18,8 +19,9 @@ const CardGif = ({ gif }) => {
     setIsHovered(false);
   };
 
-  const HandleCopyUrl = () => {
-    navigator.clipboard.writeText(`http://127.0.0.1:5173/gif/${gif._id}`);
+  const HandleCopyUrl = (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(gif.imageGif);
     toast.success("The minion is in your power. SHARE IT");
   };
 
@@ -27,6 +29,16 @@ const CardGif = ({ gif }) => {
 
   const handleToggleLike = (e) => {
     e.stopPropagation();
+    const updatedGifs = dataGifs.map((minion) => {
+      if (gif._id === minion._id) {
+        return { ...gif, liked: !gif.liked };
+      } else {
+        return minion;
+      }
+    });
+    const currentGif = { ...gif, liked: !gif.liked };
+    updateGif(gif._id, currentGif);
+    setDataGifs([...updatedGifs]);
   };
 
   return (

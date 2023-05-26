@@ -19,19 +19,14 @@ const GiftsProvider = ({ children }) => {
     getAllGifs();
   }, []);
 
-  const addGif = async (gif) => {
-    console.log("hola");
+  const addGif = async (formData) => {
     const res = await fetch("http://localhost:4000/gifs/add-gif", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(gif),
+      body: formData,
     });
     const data = await res.json();
     console.log(data);
-    setDataGifs([...dataGifs, data.gif]);
-
+    // setDataGifs([...dataGifs, data.gif]);
     // if (data.ok) {
     //   toast.success("Playlist creada con éxito")
     // }
@@ -83,12 +78,13 @@ const GiftsProvider = ({ children }) => {
       value={{
         addGif,
         dataGifs,
+        setDataGifs,
         updateGif,
         deleteGif,
         infoGif,
         setInfoGif,
         searchGif,
-        getAllGifs
+        getAllGifs,
       }}
     >
       {children}

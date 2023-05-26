@@ -5,9 +5,10 @@ import GiftContext from '../context/GiftsContext'
 
 import GifsIndividualPage from '../components/GifsIndividualPage/GifsIndividualPage'
 import Footer from '../components/Footer/Footer'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const PartyPage = () => {
+    const navigate = useNavigate();
     const {dataGifs} = useContext(GiftContext)
 
     const PartyGifs = dataGifs.filter((party) => {
@@ -26,9 +27,9 @@ const PartyPage = () => {
                 {
                     PartyGifs.map((gif) => {
                         return (
-                            <NavLink to={`/gif/${gif._id}`}>
+                            <div onClick={() => navigate(`/gif/${gif._id}`)}>
                                 <GifsIndividualPage gif={gif} />
-                            </NavLink>
+                            </div>
                         )                          
                     })
                 }
