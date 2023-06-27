@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import minionLeft from "../../assets/minionLeft.png";
 import minionRight from "../../assets/minionRight.png";
 import GiftContext from "../../context/GiftsContext";
+import { toast } from "react-hot-toast";
 
 const ModalNewGif = ({ setModalShow }) => {
   const { addGif, dataGifs } = useContext(GiftContext);
@@ -45,6 +46,7 @@ const ModalNewGif = ({ setModalShow }) => {
 
     addGif(formData);
     setModalShow(false);
+    toast.success("Your minion has been added successfully")
   };
 
   return (

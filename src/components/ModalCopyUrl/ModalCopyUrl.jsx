@@ -3,14 +3,15 @@ import copyMinion from '../../assets/copyMinion.png'
 import close from '../../assets/close.png'
 import { toast } from 'react-hot-toast'
 
-const ModalCopyUrl = ({setShowCopyModal, infoGif}) => {
+const ModalCopyUrl = ({setShowCopyModal, infoGif, }) => {
 
     const handleCloseModal = () => {
         setShowCopyModal(false)
     }
 
     const handleCopyText = () => {
-      navigator.clipboard.writeText(gif.imageGif);
+      console.log("here")
+      navigator.clipboard.writeText(infoGif.imageGif);
       setShowCopyModal(false)
       toast.success("The minion is in your power. SHARE IT")
     }

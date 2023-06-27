@@ -10,7 +10,7 @@ const GiftsProvider = ({ children }) => {
   const [infoGif, setInfoGif] = useState(null);
 
   const getAllGifs = async () => {
-    const res = await fetch("http://localhost:4000/gifs");
+    const res = await fetch(`${BASE_URL}`);
     const data = await res.json();
     setDataGifs(data.allGifs);
   };
@@ -20,20 +20,17 @@ const GiftsProvider = ({ children }) => {
   }, []);
 
   const addGif = async (formData) => {
-    const res = await fetch("http://localhost:4000/gifs/add-gif", {
+    const res = await fetch(`${BASE_URL}/add-gif`, {
       method: "POST",
       body: formData,
     });
     const data = await res.json();
     console.log(data);
-    // setDataGifs([...dataGifs, data.gif]);
-    // if (data.ok) {
-    //   toast.success("Playlist creada con éxito")
-    // }
+
   };
 
   const updateGif = async (gifId, newValue) => {
-    const res = await fetch("http://localhost:4000/gifs/update-gif", {
+    const res = await fetch(`${BASE_URL}/update-gif`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +42,7 @@ const GiftsProvider = ({ children }) => {
   };
 
   const deleteGif = async (id) => {
-    const res = await fetch(`http://localhost:4000/gifs/delete-gif/${id}`, {
+    const res = await fetch(`${BASE_URL}/delete-gif/${id}`, {
       method: "DELETE",
     });
     const data = await res.json();
@@ -67,9 +64,6 @@ const GiftsProvider = ({ children }) => {
 
     if (data.status === "OK") {
       setDataGifs(data.gifs);
-    } else {
-      // return false;
-      // poner algun tipo de error
     }
   };
 

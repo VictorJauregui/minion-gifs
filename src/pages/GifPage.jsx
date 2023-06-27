@@ -70,8 +70,8 @@ const GifPage = () => {
     <div className='bg-black min-h-screen w-[95%] md:w-4/5 mx-auto'>
         <Menu />
         <Search />
-        <div className='h-[28vh] sm:h-[40vh] xl:h-[40vh] 2xl:h-[60vh] md:flex  mt-10 w-[95%] mx-auto md:w-4/6 md:pl-12 xl:pl-16'>
-            <img className='h-full w-full sm:w-[90vw] lg:w-[40vw] 2xl:w-[40vw] rounded-xl ' src={infoGif?.imageGif} alt="" />
+        <div className='h-[28vh] sm:h-[40vh] xl:h-[40vh] 2xl:h-[60vh] md:flex  mt-10 w-[95%] mx-auto md:w-4/6 md:pl-12 xl:pl-16 object-cover'>
+            <img className='h-full w-full sm:w-[90vw] lg:w-[40vw] 2xl:w-[40vw] rounded-xl object-cover ' src={infoGif?.imageGif} alt="" />
             <div className='flex justify-between md:block pt-6 md:pt-10 mb-10'>
                 <div className='mt-4 md:mt-0 flex text-white items-center font-bold gap-2 md:ml-6 cursor-pointer' onClick={handleChangeLike}>
                     <img className='w-8 sm:w-10' src={ infoGif?.liked===true ? blueHeart : like} alt="" />
