@@ -1,5 +1,4 @@
-import "swiper/css";
-import "swiper/css/navigation";
+
 import SmilingGifts from "../SmilingGifts/SmilingGifts";
 
 
