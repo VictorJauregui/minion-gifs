@@ -52,7 +52,7 @@ const GifPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/gifs/${id}`);
+        const res = await fetch(`https://minion-gifs-back-production.up.railway.app/gifs/${id}`);
         const data = await res.json();
         setInfoGif(data.gif);
       } catch (error) {

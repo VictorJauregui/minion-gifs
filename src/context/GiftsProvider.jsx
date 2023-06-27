@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import GifContext from "./GiftsContext";
-const BASE_URL = "http://localhost:4000/gifs";
+const BASE_URL = "https://minion-gifs-back-production.up.railway.app/gifs";
 
 const GiftsProvider = ({ children }) => {
   const [dataGifs, setDataGifs] = useState([]);
