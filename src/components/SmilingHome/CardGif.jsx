@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import blueHeart from "../../assets/blueHeart.png";
 import partyCard from "../../assets/partyCard.png";
 import LoveCard from "../../assets/LoveCard.png";
-import smileCard from "../../assets/smileCard.png";
+import smileCard from "../../assets/SmileCard.png";
 import GiftContext from "../../context/GiftsContext";
 
 const CardGif = ({ gif }) => {
