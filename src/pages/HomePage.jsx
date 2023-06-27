@@ -14,7 +14,7 @@ const HomePage = () => {
     const [modalShow, setModalShow] = useState(false)
   return (
     <div className='bg-black'>
-        <div className='w-[95%] lg:w-[80%] mx-auto h-[38vh] 2xl:h-[30vh] bg-black border-b'>
+        <div className='w-[95%] lg:w-[80%] mx-auto h-[38vh] 2xl:h-[30vh] bg-black'>
             <Menu />
             <div className='mt-16'>
                 <h2 className='text-white w-5/6 mx-auto text-xl md:text-2xl xl:text-5xl font-bold  mb-0'>Welcome Víctor,</h2>
